@@ -1,0 +1,557 @@
+@font-face {
+	font-family: Tamil;
+	src: url(../fonts/NotoSansTamil-Bold.ttf);
+}
+.box-sized{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+body{
+	overflow: hidden;
+}
+canvas {
+  display: block; 
+}
+.chennai-wrapper{
+
+}
+.road{
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	bottom: 0;
+	background: #000;
+}
+.median{
+	height: 1000%;
+	width: 0px;
+	font-family: Helvetica, sans-serif;
+	font-size: 96px;
+	color: #FFF;
+	word-break: break-all;
+	position: absolute;
+	bottom: -900px;
+	animation: road-animate 15s linear infinite;
+	-webkit-animation: road-animate 15s linear infinite;
+	-moz-animation: road-animate 15s linear infinite;
+	-o-animation: road-animate 15s linear infinite;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	font-weight: 100;
+	line-height: 130px;
+	right: 0;
+	margin-left: -10px;
+}
+.lighthouse{
+	display: none;
+}
+.lighthouse-building{
+	background-color: #B8312F;
+	background-image: linear-gradient(transparent 50%, white 50%);
+	background-size: 150px 150px;
+	background-color: #B8312F;
+	background-image: linear-gradient(transparent 50%, white 50%);
+	background-size: 150px 150px;
+	width:130px;
+	height: 400px;
+	position: absolute;
+	bottom: 200px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-top: 1px solid black;
+	margin-left: 100px;
+	z-index: 1;
+}
+.ladder{
+	border-right: 2px solid #aaa;
+	border-left: 2px solid #aaa;
+	width: 40px;
+	height: 325px;
+	position: absolute;
+	bottom: 0;
+	margin-left: 50px;
+}
+.ladder li{
+	width: 4px;
+	height: 4px;
+	border: 1px solid #aaa;
+	margin: 5px;
+}
+.ladder li:before{
+	content: "";
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	border: 1px solid #aaa;
+	margin-left: 10px;
+	margin-top: -1px;
+}
+.ladder li:after{
+	content: "";
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	border: 1px solid #aaa;
+	margin-left: 22px;
+	margin-top: -1px;
+}
+.lighthouse-floor1{
+	width: 200px;
+	height: 2px;
+	position: absolute;
+	margin: 74px 0 0 -55px;
+	background: #333;
+	box-shadow: 0 -10px #333, 0 -20px #333, 0 -30px #333;
+}
+.lighthouse-floor1:after{
+	position: absolute;
+	height: 30px;
+	content: "";
+	width: 2px;
+	background: #333;
+	margin: -30px 0 0 0;
+	box-shadow: 50px 0 #333, 110px 0 #333, 170px 0 #333, 199px 0 #333;
+}
+.lighthouse-floor1:before{
+	border-bottom: 12px solid #B8312F;
+	border-left: 5px solid transparent;
+	border-right: 50px solid transparent;
+	height: 0;
+	width: 145px;
+	position: absolute;
+	transform: scale(-1,-1);
+	-webkit-transform: scale(-1,-1);
+	-moz-transform: scale(-1,-1);
+	content: "";
+	margin-top: 2px;
+}
+.lighthouse-floor1.floor2{
+	margin-top: -15px;
+}
+.lighthouse-support{
+	height: 402px;
+	width: 40px;
+	position: absolute;
+	background: #DDD;
+	z-index: 0;
+	margin-left: 230px;
+	bottom: 200px;
+	border: 1px solid #333;
+}
+.lighthouse-support:before{
+	position: absolute;
+	content: "";
+	height: 402px;
+	bottom: 0px;
+	width: 1px;
+	background: #333;
+	right: 10px;
+}
+.lighthouse-door{
+	width: 36px;
+	height: 50px;
+	position: absolute;
+	border: 2px solid #333;
+	margin: -52px 0 0 120px;
+}
+.lighthouse-door:after{
+	position: absolute;
+	content: "";
+	width: 26px;
+	height: 44px;
+	border: 2px solid #333;
+	margin: 4px 0 0 3px;
+}
+.lighthouse-top{
+	width: 50px;
+	height: 70px;
+	top: -87;
+	position: absolute;
+	background: #DDD;
+	border: 2px solid #333;
+	margin-left: 59px;
+}
+.lighthouse-top:before{
+	width: 10px;
+	height: 70px;
+	background: #333;
+	content: "";
+	position: absolute;
+	margin-left: 20px;
+}
+.lighthouse-top:after{
+	width: 50px;
+	height: 1px;
+	background: #333;
+	position: absolute;
+	content: "";
+	top: 20px;
+	box-shadow: 0 25px #333;
+}
+
+.napiersBridge{
+	display: none;
+}
+.bridge{
+	position: absolute;
+	bottom: 200px;
+}
+.bridge .arch-wrapper{
+	width: 400px;
+	height: 300px;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+}
+.bridge .arch1{
+	width: 400px;
+	height: 200px;
+	border: 10px solid #DDD;
+	border-collapse: collapse;
+	border-radius: 500px 500px 0 0;
+	border-top-left-radius: 800px 800px;
+	border-top-right-radius: 800px 800px;
+	bottom: 70px;
+	position: absolute;
+	overflow: hidden;
+	transform: scaleY(0.7);
+	-webkit-transform: scaleY(0.7);
+	-moz-transform: scaleY(0.7);
+}
+.arch-wrapper.arch2{
+	margin-left: 400px;
+}
+.arch-wrapper.arch3{
+	margin-left: 800px;
+}
+.arch-wrapper.arch4{
+	margin-left: 1200px;
+}
+.arch-wrapper.arch5{
+	margin-left: 1600px;
+}
+.bridge .arch1:before{
+	width: 400px;
+	height: 3px;
+	position: absolute;
+	content: "";
+	background: #ddd;
+	margin: 156px 0 0 -10px;
+}
+.bridge .arch1:after{
+	position: absolute;
+	content: "";
+	width: 2px;
+	height: 22px;
+	background: #DDD;
+	bottom: 0;
+	left: 0;
+	box-shadow: 10px 0 #DDD, 20px 0 #DDD, 30px 0 #DDD, 40px 0 #DDD, 50px 0 #DDD, 60px 0 #DDD, 70px 0 #DDD, 80px 0 #DDD, 90px 0 #DDD, 100px 0 #DDD, 110px 0 #DDD, 120px 0 #DDD, 130px 0 #DDD, 140px 0 #DDD, 150px 0 #DDD, 160px 0 #DDD, 170px 0 #DDD, 180px 0 #DDD, 190px 0 #DDD, 200px 0 #DDD, 210px 0 #DDD, 220px 0 #DDD, 230px 0 #DDD, 240px 0 #DDD, 250px 0 #DDD, 260px 0 #DDD, 270px 0 #DDD, 280px 0 #DDD, 290px 0 #DDD, 300px 0 #DDD, 310px 0 #DDD, 320px 0 #DDD, 330px 0 #DDD, 340px 0 #DDD, 350px 0 #DDD, 360px 0 #DDD, 370px 0 #DDD, 380px 0 #DDD, 390px 0 #DDD;
+}
+.bridge .arch1 .pillars{
+	width: 6px;
+	height: 200px;
+	background: #DDD;
+	position: absolute;
+	bottom: 0;
+	margin-left: 12px;
+	box-shadow: 50px 0 #DDD, 100px 0 #DDD, 150px 0 #DDD, 200px 0 #DDD, 250px 0 #DDD, 300px 0 #DDD, 350px 0 #DDD;
+}
+.bridge .support{
+	width: 40px;
+	height: 98px;
+	background: #DDD;
+	position: absolute;
+	bottom: 0;
+	margin-left: -20px;
+}
+.bridge .support:before{
+	width: 70px;
+	height: 20px;
+	content: "";
+	position: absolute;
+	background: #DDD;
+	top: 0;
+	margin-left: -15px;
+}
+.bridge .support:after{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 30px 35px 0 35px;
+	border-color: #ddd transparent transparent transparent;
+	position: absolute;
+	content: "";
+	margin: 20px 0 0 -15px;
+}
+.bridge .support.support2{
+	margin-left: 380px;
+}
+
+.beach{
+	width: 5000px;
+	bottom: 200px;
+	position: absolute;
+	overflow: hidden;
+	right: 0;
+	display: none;
+}
+
+.annaArch{
+	position: absolute;
+	bottom: 500px;
+	margin-left: 100px;
+	display: none;
+}
+.archText{
+	font-family: 'Tamil', monospace;
+	font-size: 10px;
+	position: absolute;
+	color: #6F7D7E;
+}
+.arch-wrapper.arch2{
+	margin-left: 390px;
+}
+.annaArch .arch1{
+	width: 300px;
+	height: 150px;
+	border: 30px solid #E3E3E3;
+	border-radius: 300px 300px 0 0;
+	border-bottom: 0;
+	position: absolute;
+}
+.annaArch .arch1:before{
+	width: 320px;
+	height: 160px;
+	border: 8px solid #DBDBDB;
+	border-radius: 320px 320px 0 0;
+	border-bottom: 0;
+	position: absolute;
+	content: "";
+	margin: -18px 0 0 -18px;
+}
+.arch-upper{
+	width: 30px;
+	height: 7px;
+	background: #DDD;
+	position: absolute;
+	margin: 108px -48px;
+	transform: rotate(-79deg);
+	-webkit-transform: rotate(-79deg);
+	-moz-transform: rotate(-79deg);
+}
+.arch-upper:after{
+	position: absolute;
+	content: "";
+	border-bottom: 6px solid #D0D0D0;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	height: 0;
+	width: 24px;
+	transform: scale(1,-1);
+	-webkit-transform: scale(1,-1);
+	-moz-transform: scale(1,-1);
+	margin: 6px 0 0 0px;
+}
+.arch-upper:before{
+	width: 10px;
+	height: 5px;
+	border-radius: 10px 10px 0 0;
+	background: #D0D0D0;
+	position: absolute;
+	content: "";
+	margin: -5px 0 0 10px;
+}
+.arch-upper.arch-upper2{
+	margin: 58px -31px;
+	transform: rotate(-79deg);
+	-webkit-transform: rotate(-61deg);
+	-moz-transform: rotate(-79deg);
+}
+.arch-upper.arch-upper3{
+	margin: 16px 0px;
+	transform: rotate(-79deg);
+	-webkit-transform: rotate(-46deg);
+	-moz-transform: rotate(-79deg);
+}
+.arch-upper.arch-upper4{
+	margin: -18px 43px;
+	transform: rotate(-79deg);
+	-webkit-transform: rotate(-31deg);
+	-moz-transform: rotate(-79deg);
+}
+.arch-upper.arch-upper5{
+	margin: -18px 227px;
+	transform: rotate(-79deg);
+	-webkit-transform: rotate(31deg);
+	-moz-transform: rotate(-79deg);
+}
+.arch-upper.arch-upper6{
+	margin: 16px 0px 0 271px;
+	transform: rotate(-79deg);
+	-webkit-transform: rotate(46deg);
+	-moz-transform: rotate(-79deg);
+}
+.arch-upper.arch-upper7{
+	margin: 58px 0 0 301px;
+	transform: rotate(-79deg);
+	-webkit-transform: rotate(61deg);
+	-moz-transform: rotate(-79deg);
+}
+.arch-upper.arch-upper8{
+	margin: 108px 0 0 319px;
+	transform: rotate(-79deg);
+	-webkit-transform: rotate(79deg);
+	-moz-transform: rotate(-79deg);
+}
+.pillar1{
+	width: 30px;
+	height: 120px;
+	background: #E3E3E3;
+	position: absolute;
+	bottom: -300px;
+}
+.pillar1.pillar2{
+	margin-left: 330px;
+}
+.pillar-support{
+	width: 50px;
+	height: 10px;
+	background: #DDD;
+	position: absolute;
+	margin-left: -10px;
+}
+.pillar-support:after{
+	position: absolute;
+	content: "";
+	border-bottom: 8px solid #D0D0D0;
+	border-left: 2px solid transparent;
+	border-right: 3px solid transparent;
+	height: 0;
+	width: 45px;
+	transform: scale(1,-1);
+	-webkit-transform: scale(1,-1);
+	-moz-transform: scale(1,-1);
+	margin: 10px 0 0 0px;
+}
+.pillar-support.support2{
+	margin-top: 30px;
+}
+.arch-dome{
+	width: 30px;
+	height: 7px;
+	background: #DDD;
+	position: absolute;
+	margin: -48px 135px;
+	transform: scale(1.8);
+	-webkit-transform: scale(1.8);
+	-moz-transform: scale(1.8);
+}
+.arch-dome:after{
+	position: absolute;
+	content: "";
+	border-bottom: 6px solid #D0D0D0;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	height: 0;
+	width: 24px;
+	transform: scale(1,-1);
+	-webkit-transform: scale(1,-1);
+	-moz-transform: scale(1,-1);
+	margin: 6px 0 0 0px;
+}
+.arch-dome:before{
+	width: 10px;
+	height: 5px;
+	border-radius: 10px 10px 0 0;
+	background: #D0D0D0;
+	position: absolute;
+	content: "";
+	margin: -5px 0 0 10px;
+}
+.archText span{
+	display: block;
+	position: absolute;
+}
+.let1{
+	-webkit-transform: rotate(-50deg);
+	margin: 35px 0 0 22px;
+}
+.let2{
+	-webkit-transform: rotate(-50deg);
+	margin: 26px 0 0 34px;
+}
+.let3{
+	-webkit-transform: rotate(-40deg);
+	margin: 19px 0 0 38px;
+}
+.let4{
+	-webkit-transform: rotate(-33deg);
+	margin: 9px 0 0 47px;
+}
+.let5{
+	-webkit-transform: rotate(-32deg);
+	margin: 3px 0 0 60px;
+}
+.let6{
+	-webkit-transform: rotate(-28deg);
+	margin: -4px 0 0 72px;
+}
+.let7{
+	-webkit-transform: rotate(-24deg);
+	margin: -10px 0 0 84px;
+}
+.let8{
+	-webkit-transform: rotate(-14deg);
+	margin: -17px 0 0 101px;
+}
+.let9{
+	-webkit-transform: rotate(-6deg);
+	margin: -16px 0 0 124px;
+}
+.let10{
+	-webkit-transform: rotate(-5deg);
+	margin: -17px 0 0 133px;
+}
+.let11{
+	-webkit-transform: rotate(-1deg);
+	margin: -17px 0 0 145px;
+}
+.let12{
+	-webkit-transform: rotate(5deg);
+	margin: -16px 0 0 158px;
+}
+.let13{
+	-webkit-transform: rotate(12deg);
+	margin: -14px 0 0 173px;
+}
+.let14{
+	-webkit-transform: rotate(22deg);
+	margin: -8px 0 0 196px;
+}
+.let15{
+	-webkit-transform: rotate(24deg);
+	margin: -1px 0 0 207px;
+}
+.let16{
+	-webkit-transform: rotate(32deg);
+	margin: 7px 0 0 232px;
+}
+.let17{
+	-webkit-transform: rotate(42deg);
+	margin: 22px 0 0 246px;
+}
+.let18{
+	-webkit-transform: rotate(41deg);
+	margin: 34px 0 0 265px;
+}
+.group1{
+	position: absolute;
+	margin: 8px 0 0 -8px;
+}
+.group2{
+	margin: 5px 0 0 -9px;
+	display: block;
+}
