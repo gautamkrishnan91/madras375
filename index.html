@@ -1,8 +1,8 @@
 <html>
 	<head>
-		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	</head>
 	<body>
 		<div class="chennai-wrapper">
@@ -59,9 +59,10 @@
 						</div>
 					</div>
 				</div>
+				<!-- <div class="sand"></div>
 				<div class="beach">
 					<canvas id="c">hi</canvas>
-				</div>
+				</div> -->
 				<div class="annaArch">
 					<div class="arch-wrapper">
 						<div class="arch1">
@@ -108,44 +109,135 @@
 						</div>
 					</div>
 				</div>
+				<div class="chennaiCentral">
+					<div class="left-tower">
+						<div class="upper-deco"></div>	
+						<div class="dormer"></div>
+						<div class="upper-trapezoid"></div>
+						<div class="separations"></div>
+						<div class="canopy"></div>
+						<div class="door"></div>
+						<div class="steps"></div>
+					</div>
+					<div class="main-building">
+						<div class="centralBoard">&#2970;&#3014;&#2985;&#3021;&#2985;&#3016; &#2970;&#3014;&#2985;&#3021;&#2975;&#3021;&#2992;&#2994;&#3021;</div>
+						<div class="upper-deco"></div>
+						<div class="window">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window2">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window3">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window4">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window5">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window6">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window7">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window8">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window9">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window10">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window11">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window12">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window13">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window14">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="separations"></div>
+						<div class="window-small"></div>
+						<div class="window-small window2"></div>
+						<div class="window-small window3"></div>
+						<div class="window-small window4"></div>
+						<div class="window-small window5"></div>
+						<div class="window-small window6"></div>
+						<div class="window-small window7"></div>
+						<div class="window-small window8"></div>
+						<div class="window-small window9"></div>
+						<div class="window-small window10"></div>
+						<div class="window-small window11"></div>
+						<div class="window-small window12"></div>
+						<div class="window-small window13"></div>
+						<div class="window-small window14"></div>
+						<div class="window-small window15"></div>
+						<div class="separator-bottom box-sized"></div>
+					</div>
+					<div class="central-tower">
+						<div class="upper-trapezoid"></div>
+						<div class="upper">
+							<div class="clock box-sized">
+								<div class="hands"></div>
+							</div>
+						</div>
+						<div class="funnel"></div>
+						<div class="ledge1"></div>
+						<div class="top-shade"></div>
+						<div class="window window-large">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window-narrow">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="window window-narrow2">
+							<div class="windowLeft"></div>
+							<div class="windowRight"></div>
+						</div>
+						<div class="balcony box-sized"></div>
+						<div class="separations"></div>
+						<div class="separator-bottom box-sized"></div>
+					</div>
+					<div class="left-tower right-tower">
+						<div class="upper-deco"></div>	
+						<div class="dormer"></div>
+						<div class="upper-trapezoid"></div>
+						<div class="separations"></div>
+						<div class="canopy"></div>
+						<div class="door"></div>
+						<div class="steps"></div>
+					</div>
+				</div>
 			</div>
 			<div class="road">
 				<div class="median">IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII</div>
 			</div>
 		</div>
-		<script>
-	      function drawTextAlongArc(context, str, centerX, centerY, radius, angle) {
-	        var len = str.length, s;
-	        context.save();
-	        context.translate(centerX, centerY);
-	        context.rotate(-1 * angle / 2);
-	        context.rotate(-1 * (angle / len) / 2);
-	        for(var n = 0; n < len; n++) {
-	          context.rotate(angle / len);
-	          context.save();
-	          context.translate(0, -1 * radius);
-	          s = str[n];
-	          context.fillText(s, 0, 0);
-	          context.restore();
-	        }
-	        context.restore();
-	      }
-	      var canvas = document.getElementById('myCanvas'), 
-	        context = canvas.getContext('2d'),
-	        centerX = canvas.width / 2,
-	        centerY = canvas.height - 30,
-	        angle = Math.PI * 0.8,
-	        radius = 150;
-	      
-	      context.font = '30pt Calibri';
-	      context.textAlign = 'center';
-	      context.fillStyle = 'blue';
-	      context.strokeStyle = 'blue';
-	      context.lineWidth = 4;
-	      drawTextAlongArc(context, 'Text along arc path', centerX, centerY, radius, angle);
-
-	    </script>
-		<script type="text/javascript" src="js/jquery.lettering-0.6.min.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/animate.js"></script>
 	</body>
 </html>
